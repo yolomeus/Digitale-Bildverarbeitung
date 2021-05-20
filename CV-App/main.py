@@ -4,10 +4,11 @@ More infos in the README.md file
 """
 
 import argparse
-import cv2
-import platform
-import numpy as np
 import datetime
+import platform
+
+import cv2
+import numpy as np
 
 DEFAULT_CAMERA = 0
 DEFAULT_MODE = "virtual_cam"  # "screen", "virtual_cam"
@@ -56,7 +57,9 @@ elif current_os == "Linux":
     raise NotImplementedError
 elif current_os == "Windows":
     import pyvirtualcam
+
     cam = None
+
 
     def show(img):
         global cam
@@ -81,7 +84,6 @@ current_algorithm = algorithms[current_algorithm_id]()
 cv2.setMouseCallback(WINDOW_NAME, current_algorithm.mouse_callback)
 
 print("=== FINISHED INITIALIZING FRAMEWORK === \n\n")
-
 
 '''
 Following code runs the processing loop
@@ -127,4 +129,3 @@ while True:
         cap.set(propId=cv2.CAP_PROP_AUTOFOCUS, value=int(auto_focus))
 
 print("=== FINISHED PROCESSING LOOP AND STOP APPLICATION === ")
-

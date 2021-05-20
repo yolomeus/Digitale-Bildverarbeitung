@@ -8,6 +8,7 @@ class TutorialAlgorithm(Algorithm):
 
     def __init__(self):
         """ Init reference point with None value """
+        self.pos = None
 
     def process(self, img):
         """
@@ -27,4 +28,4 @@ class TutorialAlgorithm(Algorithm):
         """ Selects a new reference position"""
         if event == cv2.EVENT_LBUTTONUP:
             # Store x and y to the member value self.pos
-            pass
+            self.pos = (x, y)

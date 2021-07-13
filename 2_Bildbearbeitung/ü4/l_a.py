@@ -1,6 +1,5 @@
 import numpy as np
 
-
 """ Erstellen des Ursprünglichen Filterkerns"""
 f_a = np.expand_dims(np.asarray([1, 4, 1]), 0)
 f_b = np.expand_dims(np.asarray([-1, 0, 1]), 1)
@@ -67,9 +66,9 @@ f_C = np.asarray(
 )
 
 A = np.array([
-  [-2, 0, 0],
-  [ 0,-2, 0],
-  [ 0, 0,-2],
+    [-2, 0, 0],
+    [0, -2, 0],
+    [0, 0, -2],
 ])
 B = np.array([-2, 0, 2])
 x = np.linalg.solve(A, B)
